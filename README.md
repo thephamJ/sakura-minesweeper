@@ -34,6 +34,6 @@ Open `index.html` in a browser.
 - Revealing an empty cell expands outward with an iterative flood fill that uses an explicit stack. Recursion could overflow the call stack on a large empty region.
 - The game is won when the number of revealed cells equals the total number of cells minus the number of mines.
 
-## Hosting
+## Play it
 
-To publish it with GitHub Pages: Settings, then Pages, then deploy from the `main` branch (root folder).
+https://thephamj.github.io/sakura-minesweeper/
