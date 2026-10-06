@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minesweeper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cherry blossom branch -->
+<svg class="branch" viewBox="0 0 460 260" aria-hidden="true">
+  <defs>
+    <symbol id="bl" viewBox="-20 -20 40 40">
+      <g fill="#f9c9d8">
+        <path d="M0 0C-9-6-8-18 0-19C8-18 9-6 0 0Z"/>
+        <path d="M0 0C-9-6-8-18 0-19C8-18 9-6 0 0Z" transform="rotate(72)"/>
+        <path d="M0 0C-9-6-8-18 0-19C8-18 9-6 0 0Z" transform="rotate(144)"/>
+        <path d="M0 0C-9-6-8-18 0-19C8-18 9-6 0 0Z" transform="rotate(216)"/>
+        <path d="M0 0C-9-6-8-18 0-19C8-18 9-6 0 0Z" transform="rotate(288)"/>
+      </g>
+      <circle r="4" fill="#e0457b"/>
+      <circle r="1.6" fill="#ffdbe6"/>
+    </symbol>
+  </defs>
+  <g fill="none" stroke="#3b2c5c" stroke-linecap="round">
+    <path d="M470 18C390 34 320 58 250 104S110 176 30 196" stroke-width="9"/>
+    <path d="M330 58C318 90 300 112 270 132" stroke-width="5"/>
+    <path d="M230 116C222 150 200 170 170 184" stroke-width="4"/>
+    <path d="M400 30C410 62 404 86 384 110" stroke-width="4"/>
+  </g>
+  <use href="#bl" x="368" y="2" width="44" height="44"/>
+  <use href="#bl" x="300" y="34" width="38" height="38"/>
+  <use href="#bl" x="250" y="84" width="46" height="46"/>
+  <use href="#bl" x="196" y="104" width="34" height="34"/>
+  <use href="#bl" x="150" y="150" width="42" height="42"/>
+  <use href="#bl" x="95" y="168" width="32" height="32"/>
+  <use href="#bl" x="30" y="176" width="36" height="36"/>
+  <use href="#bl" x="262" y="124" width="30" height="30"/>
+  <use href="#bl" x="372" y="82" width="34" height="34"/>
+  <use href="#bl" x="146" y="176" width="26" height="26"/>
+  <circle cx="338" cy="132" r="6" fill="#d98fa8"/>
+  <circle cx="420" cy="92" r="5" fill="#f6c1d1"/>
+  <circle cx="60" cy="214" r="5" fill="#d98fa8"/>
+</svg>
+<div id="petals" aria-hidden="true"></div>
+
+<main class="app">
+  <section class="side">
+    <div class="kanji" aria-hidden="true">桜</div>
+    <h1>Minesweeper</h1>
+    <p class="tag">Reveal every safe square.</p>
+
+    <div class="stats">
+      <div class="stat"><span>Mines left</span><b id="mines">10</b></div>
+      <div class="stat"><span>Seconds</span><b id="time">0</b></div>
+    </div>
+
+    <div class="group" id="levels">
+      <button class="opt" data-level="beginner" aria-pressed="true">Beginner · 9×9</button>
+      <button class="opt" data-level="intermediate" aria-pressed="false">Intermediate · 16×16</button>
+      <button class="opt" data-level="expert" aria-pressed="false">Expert · 30×16</button>
+    </div>
+
+    <div class="group">
+      <button class="act primary" id="restart">New game</button>
+      <button class="act" id="flagmode" aria-pressed="false">Flag mode</button>
+    </div>
+
+    <p id="status" role="status"></p>
+    <p class="help">
+      Click to reveal. Right-click, long-press, or turn on Flag mode to plant a blossom flag.
+      Click a number with all its flags placed to reveal its neighbors. Your first click is always safe.
+    </p>
+  </section>
+
+  <section class="field">
+    <div id="board"></div>
+  </section>
+</main>
+
+<script src="game.js"></script>
+</body>
+</html>
